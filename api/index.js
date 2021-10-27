@@ -6,10 +6,10 @@ const { JWT_SECRET } = process.env;
 
 const usersRouter = require("./users");
 apiRouter.use("/users", usersRouter);
-const usersRouter = require("./posts");
-apiRouter.use("/posts", usersRouter);
-const usersRouter = require("./tags");
-apiRouter.use("/tags", usersRouter);
+const postsRouter = require("./posts");
+apiRouter.use("/posts", postsRouter);
+const tagsRouter = require("./tags");
+apiRouter.use("/tags", tagsRouter);
 
 apiRouter.use((req, res, next) => {
   if (req.user) {
